@@ -1,5 +1,13 @@
 const container = document.querySelector("#container");
 
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createGrid(size) {
     container.innerHTML = "";
     const squareSize = 960 / size;
@@ -13,7 +21,7 @@ function createGrid(size) {
         square.style.height = `${squareSize}px`;
 
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
+            square.style.backgroundColor = getRandomColor();
         });
     };
 };
